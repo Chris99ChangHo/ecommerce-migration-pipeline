@@ -1,10 +1,14 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import re
 import urllib.parse # URL 인코딩을 위한 모듈 임포트
+from dotenv import load_dotenv
 
-# ▶ 메인 페이지 URL 설정
-MAIN_URL = "https://www.melbmarket.com.au"
+load_dotenv()
+
+# ▶ 메인 페이지 URL 설정 (환경변수 SOURCE_URL에서 불러옴, .env 파일 참조)
+MAIN_URL = os.getenv("SOURCE_URL", "https://example-source.com")
 
 # ▶ 상품 상세 페이지 URL을 저장할 리스트 초기화
 product_detail_urls_raw = [] # 초기 수집된 원본 URL (인코딩 전)

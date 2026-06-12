@@ -3,6 +3,7 @@ import csv
 import re
 import time
 import requests
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -12,12 +13,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 
+load_dotenv()
+
 # --- 파일 및 URL 설정 ---
 BASE_DIR = "상품설명사진"
 URL_DIR = "url"
 VALID_URLS_CSV = os.path.join(URL_DIR, "valid_urls.csv")
 INVALID_URLS_CSV = os.path.join(URL_DIR, "invalid_urls.csv")
-MAIN_PAGE_URL = "https://www.melbmarket.com.au/"
+MAIN_PAGE_URL = os.getenv("SOURCE_URL", "https://example-source.com") + "/"
 
 # --- 유틸리티 함수 ---
 def ensure_directory_exists(dir_path):
