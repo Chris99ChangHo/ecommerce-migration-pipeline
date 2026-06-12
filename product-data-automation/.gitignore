@@ -1,0 +1,28 @@
+﻿# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Data outputs
+data/
+logs/
+reports/
+uploaded_files/
+url/
+shopify_progress.json
+shopify_failed_items.json
+
+# Local scraped assets
+상품설명사진/
+상품설명사진test/
+
+# Raw inputs/exports
+*.csv
+*.html
+
+# Env
+.env
+
+# Misc
+*.stackdump
